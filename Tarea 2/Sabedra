@@ -1,0 +1,18 @@
+######## Ejercico 1.10.3
+
+######Numero de filas y columnas
+
+ruta="../../CSB/unix/data/Saavedra2013"
+
+cat $ruta/n1.txt | wc -l
+head -n 1 $ruta/n1.txt | tr -d " " | tr -d "\n" | wc -c
+
+#####Numero de filas y columnas de cada archivo
+
+for i in $ruta/n*.txt
+do
+ Filas=`cat $i | wc -l`
+ Columnas=`head -n 1 $i | tr -d " " | tr -d "\n" | wc -c`
+ echo $i "Filas:" $Filas "Columnas:" $Columnas
+done
+
